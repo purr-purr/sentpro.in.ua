@@ -1,0 +1,41 @@
+.container {
+	@include flex($gap: 23px);
+	margin-bottom: 160px;
+
+	@include media($mobile-bp) {
+		flex-direction: column;
+		margin-bottom: 80px;
+	}
+}
+
+.leftSide {
+	width: 409px;
+	min-width: 409px;
+
+	@include media($mobile-bp) {
+		width: 100%;
+		min-width: unset;
+	}
+}
+
+.rightSide {
+	width: 100%;
+
+	strong {
+		color: var(--bold-text);
+	}
+
+	& > p {
+		margin-bottom: 1rem;
+	}
+
+	& ~ ul,
+	& ~ ol {
+		padding-left: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	ul li::marker {
+		font-size: 10px;
+	}
+}

@@ -1,0 +1,54 @@
+.container {
+	width: 100%;
+
+	@include pseudo(after) {
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 1px;
+		background-color: var(--gray);
+	}
+
+	&[open] .heading:before {
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
+}
+
+.heading {
+	cursor: pointer;
+	color: var(--bold-text);
+	font-size: 18px;
+	font-weight: 500;
+	padding: 31px 16px 31px 0;
+
+	@include media($mobile-bp) {
+		font-size: 16px;
+	}
+
+	@include pseudo(after) {
+		right: 0;
+		bottom: 40px;
+		width: 18px;
+		height: 2px;
+		background-color: var(--bold-text);
+	}
+
+	@include pseudo(before, false) {
+		right: 8px;
+		bottom: 32px;
+		width: 2px;
+		height: 18px;
+		background-color: var(--bold-text);
+		opacity: 1;
+		transition: opacity 0.3s ease-in-out;
+	}
+}
+
+.content {
+	padding-bottom: 16px;
+
+	ul {
+		padding-left: 15px;
+	}
+}

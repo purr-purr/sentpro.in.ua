@@ -1,0 +1,138 @@
+@import 'mixins';
+
+:root {
+	--main-bg: #fff;
+	--primary: #001d87;
+	--main-text: rgba(18, 18, 18, 70%);
+	--bold-text: #121212;
+	--dark-bg: #121212;
+	--gray-bg: #f4f4f5;
+	--white: #fff;
+	--light-blue: #c0d4ee;
+	--light-blue2: #ccddf1;
+	--gray: #d0d0d0;
+	--light-gray: #e4e4e7;
+	--red: #eb5757;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+
+	&::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
+
+	&::-webkit-scrollbar-button {
+		height: 0;
+		width: 100%;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--primary);
+		border-radius: 50px;
+	}
+
+	&::-webkit-scrollbar-track-piece {
+		background-color: var(--main-bg);
+	}
+}
+
+html,
+body {
+	height: 100%;
+	background-color: var(--main-bg);
+	--scroll-behavior: smooth;
+	scroll-behavior: smooth;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+body {
+	color: var(--main-text);
+}
+
+body,
+button {
+	font-family: 'Montseratt', sans-serif;
+}
+
+a {
+	scroll-margin-top: 100px;
+	color: var(--bold-text);
+	text-decoration: underline;
+	transition: opacity 0.3s ease-in-out;
+
+	&:hover {
+		text-decoration: none;
+		opacity: 0.7;
+		transition: opacity 0.3s ease-in-out;
+	}
+}
+
+button {
+	cursor: pointer;
+}
+
+p,
+a {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.2;
+
+	@include media($mobile-bp) {
+		font-size: 14px;
+	}
+}
+
+details > summary {
+	list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+	display: none;
+}
+
+section,
+article {
+	scroll-margin-top: 100px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0 30px var(--white) inset !important;
+	-webkit-text-fill-color: var(--bold-text) !important;
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type='file'] {
+	cursor: pointer;
+}
+
+strong,
+b {
+	color: var(--bold-text);
+}
+
+.MuiStepLabel-alternativeLabel {
+	color: var(--main-text) !important;
+	font-weight: 500;
+	font-size: 14px;
+	cursor: auto;
+
+	@include media($mobile-bp) {
+		font-weight: 400;
+		font-size: 12px;
+	}
+}
+
+.Mui-completed {
+	color: var(--bold-text) !important;
+	font-weight: 600 !important;
+}

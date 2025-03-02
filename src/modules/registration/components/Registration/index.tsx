@@ -13,7 +13,7 @@ import { MOBILE_BREAKPOINT } from '@utils/const';
 
 const Registration = () => {
 	const [isRegistrationModal, setIsRegistrationModal] = useState<boolean>(false);
-	const [stepNumber, setStepNumber] = useState<registrationSteps>(4);
+	const [stepNumber, setStepNumber] = useState<registrationSteps>(1);
 	const [stepFormValid, setStepFormValid] = useState<boolean>(false);
 	const [isSuccessStage, setIsSuccessStage] = useState<boolean>(false);
 	const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
@@ -86,5 +86,5 @@ const Registration = () => {
 		</>
 	);
 };
-
+x
 export default Registration;
